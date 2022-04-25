@@ -12,6 +12,10 @@ const livroSchema = new mongoose.Schema({
     autor: {
         type: String,
         required: true
+    },
+    descricao: {
+        type: String,
+        
     }
 });
 
