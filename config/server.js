@@ -8,8 +8,13 @@ const livroController = require('../src/controllers/LivroController');
 
 const app = express()
 
+//Configuração do EJS ou qualquer outra view engine
+app.set("view engine", "ejs");
+app.set("views","src/views");
+
 app.use(router);
-//chamado todos os exports do Categoria controllers
+
+//chamado todos os exports dos controllers
 app.use(categoriaController);
 app.use(livroController);
 

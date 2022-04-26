@@ -8,13 +8,15 @@ const CategoriaModel = require('../models/CategoriaModel');
 
 //Selecionar todas as categorias
 module.exports =  app.get('/categoria', async (req , res)=>{
-try {
-    const categoria = await CategoriaModel.find({});
-        
-    res.status(200).json(categoria)
-} catch (error) {
-    return res.status(500).send(error.message)
-}
+    try {
+        const categoria = await CategoriaModel.find({});
+            
+        //res.status(200).json(categoria)
+        res.render("index", {categoria});
+
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
 });
 
 //cadastrar Categorias
